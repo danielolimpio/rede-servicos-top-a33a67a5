@@ -45,8 +45,8 @@ const Hero = () => {
   }, [api]);
 
   return (
-    <section className="bg-background py-16 px-4 overflow-hidden">
-      <div className="container mx-auto">
+    <section className="bg-background overflow-hidden">
+      <div className="w-full">
         <Carousel
           setApi={setApi}
           opts={{
@@ -58,50 +58,49 @@ const Hero = () => {
           <CarouselContent>
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  {/* Left Content */}
-                  <div>
-                    <h1 className="text-5xl font-bold text-foreground mb-4 leading-tight">
-                      {slide.title}
-                    </h1>
-                    <p className="text-lg text-muted-foreground mb-6">
-                      {slide.description}
-                    </p>
-                    <Button size="lg" variant="secondary" className="rounded-full px-8">
-                      PEDIR DIAGNÓSTICO
-                    </Button>
+                <div 
+                  className="relative w-full h-[600px] bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: `url(${slide.image})` }}
+                >
+                  {/* Overlay leve para melhorar legibilidade do texto */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-transparent"></div>
+                  
+                  {/* Conteúdo */}
+                  <div className="container mx-auto px-4 h-full relative z-10">
+                    <div className="flex items-center h-full max-w-xl">
+                      <div>
+                        <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 leading-tight">
+                          {slide.title}
+                        </h1>
+                        <p className="text-lg text-foreground/90 mb-6 font-light">
+                          {slide.description}
+                        </p>
+                        <Button size="lg" variant="secondary" className="rounded-full px-8 font-medium">
+                          PEDIR DIAGNÓSTICO
+                        </Button>
 
-                    {/* Carousel Dots */}
-                    <div className="flex gap-2 mt-8">
-                      {slides.map((_, dotIndex) => (
-                        <button
-                          key={dotIndex}
-                          onClick={() => api?.scrollTo(dotIndex)}
-                          className={`w-2 h-2 rounded-full transition-colors ${
-                            current === dotIndex ? "bg-primary" : "bg-muted"
-                          }`}
-                          aria-label={`Ir para slide ${dotIndex + 1}`}
-                        />
-                      ))}
+                        {/* Carousel Dots */}
+                        <div className="flex gap-2 mt-8">
+                          {slides.map((_, dotIndex) => (
+                            <button
+                              key={dotIndex}
+                              onClick={() => api?.scrollTo(dotIndex)}
+                              className={`w-2 h-2 rounded-full transition-colors ${
+                                current === dotIndex ? "bg-primary" : "bg-muted"
+                              }`}
+                              aria-label={`Ir para slide ${dotIndex + 1}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-
-                  {/* Right Image */}
-                  <div className="flex justify-end">
-                    <img
-                      src={slide.image}
-                      alt={`Técnico profissional ${index + 1}`}
-                      className="w-full max-w-2xl h-auto object-cover rounded-lg"
-                      loading={index === 0 ? "eager" : "lazy"}
-                      decoding="async"
-                    />
                   </div>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-4" />
-          <CarouselNext className="right-4" />
+          <CarouselPrevious className="left-4 z-20" />
+          <CarouselNext className="right-4 z-20" />
         </Carousel>
       </div>
     </section>
