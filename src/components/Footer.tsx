@@ -1,6 +1,7 @@
-import { Wrench, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import logoIcon from "@/assets/logo-icon.png";
 
 const Footer = () => {
   return (
@@ -10,11 +11,7 @@ const Footer = () => {
           {/* Logo & Social */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Wrench className="h-8 w-8" />
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold tracking-tight">SERVICE</span>
-                <span className="text-xl font-light tracking-wide">CENTER</span>
-              </div>
+              <img src={logoIcon} alt="Serviço Local" className="h-16" />
             </div>
             <div className="flex gap-3 mt-4">
               <a href="#" className="hover:text-secondary transition-colors">f</a>

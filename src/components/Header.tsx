@@ -1,6 +1,7 @@
-import { Wrench, MapPin, Clock, Phone, Search } from "lucide-react";
+import { MapPin, Clock, Phone, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import logoHorizontal from "@/assets/logo-horizontal.png";
 
 const Header = () => {
   return (
@@ -19,12 +20,8 @@ const Header = () => {
       <div className="bg-primary text-primary-foreground py-4 px-4">
         <div className="container mx-auto flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <Wrench className="h-8 w-8" />
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold tracking-tight">SERVICE</span>
-              <span className="text-xl font-light tracking-wide">CENTER</span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img src={logoHorizontal} alt="Serviço Local" className="h-12" />
           </Link>
 
           {/* Contact Info */}

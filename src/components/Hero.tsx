@@ -42,6 +42,13 @@ const Hero = () => {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap());
     });
+
+    // Auto-play every 5 seconds
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, [api]);
 
   return (
@@ -63,7 +70,7 @@ const Hero = () => {
                   style={{ backgroundImage: `url(${slide.image})` }}
                 >
                   {/* Overlay leve para melhorar legibilidade do texto */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/50 to-transparent"></div>
                   
                   {/* Conteúdo */}
                   <div className="container mx-auto px-4 h-full relative z-10">
