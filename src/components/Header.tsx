@@ -7,9 +7,9 @@ const Header = () => {
   return (
     <header className="w-full">
       {/* Top Bar - Dark Blue */}
-      <div className="bg-primary-dark text-primary-dark-foreground py-2 px-4">
+      <div className="bg-primary-dark text-white py-2 px-4">
         <div className="container mx-auto flex items-center justify-between">
-          <p className="text-sm">Bem-vindo ao nosso centro de serviços! Trabalhamos para você!</p>
+          <p className="text-sm text-white">Bem-vindo ao nosso centro de serviços! Trabalhamos para você!</p>
           <Button size="sm" variant="secondary" className="rounded-full">
             CONSULTA GRÁTIS
           </Button>
@@ -29,8 +29,8 @@ const Header = () => {
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5" />
               <div className="text-sm">
-                <p>Rua Principal, 123 – Centro</p>
-                <p>São Paulo – SP, CEP 01234-000</p>
+                <p>Av. Julia Freire, 1200 - Expedicionários</p>
+                <p>João Pessoa - PB, CEP 58.041-000</p>
               </div>
             </div>
 
@@ -45,8 +45,7 @@ const Header = () => {
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5" />
               <div className="text-sm">
-                <p>(11) 1234-5678</p>
-                <p>1-800-314-684</p>
+                <p>(12) 98251-9116</p>
               </div>
             </div>
           </div>

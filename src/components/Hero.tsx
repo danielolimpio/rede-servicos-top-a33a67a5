@@ -69,8 +69,6 @@ const Hero = () => {
                   className="relative w-full h-[600px] bg-cover bg-center bg-no-repeat"
                   style={{ backgroundImage: `url(${slide.image})` }}
                 >
-                  {/* Overlay leve para melhorar legibilidade do texto */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/50 to-transparent"></div>
                   
                   {/* Conteúdo */}
                   <div className="container mx-auto px-4 h-full relative z-10">
