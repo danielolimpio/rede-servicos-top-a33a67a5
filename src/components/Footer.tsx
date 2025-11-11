@@ -70,8 +70,8 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p>© Copyright 2025 | Todos os Direitos Reservados | Desenvolvido por <a href="https://danielolimpio.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">DanielOlimpio</a></p>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-secondary transition-colors">Termos de Uso</a>
-              <a href="#" className="hover:text-secondary transition-colors">Política de Privacidade</a>
+              <a href="/termos-de-uso" className="hover:text-secondary transition-colors">Termos de Uso</a>
+              <a href="/politica-de-privacidade" className="hover:text-secondary transition-colors">Política de Privacidade</a>
             </div>
           </div>
         </div>
