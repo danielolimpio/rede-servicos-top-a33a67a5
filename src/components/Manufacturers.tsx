@@ -52,7 +52,7 @@ const Manufacturers = () => {
           <CarouselContent className="-ml-4">
             {manufacturers.map((manufacturer, index) => (
               <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
-                <div className="flex items-center justify-center p-6 bg-background/90 rounded-lg h-24">
+                <div className="flex items-center justify-center p-6 bg-primary rounded-lg h-24">
                   <img
                     src={manufacturer.logo}
                     alt={manufacturer.name}
