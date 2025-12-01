@@ -1,112 +1,74 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { type CarouselApi } from "@/components/ui/carousel";
-import { useState, useEffect } from "react";
-import heroSlide1 from "@/assets/hero-slide-1.jpg";
-import heroSlide2 from "@/assets/hero-slide-2.jpg";
-import heroSlide3 from "@/assets/hero-slide-3.jpg";
+import { Input } from "@/components/ui/input";
+import { Search, MapPin } from "lucide-react";
+import { useLocation } from "@/contexts/LocationContext";
+import slide1 from "@/assets/hero-slide-1.jpg";
 
 const Hero = () => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
+  const { location } = useLocation();
 
-  const slides = [
-    {
-      image: heroSlide1,
-      title: "Profissional. Amigável. Cortês.",
-      description: "O Servicolocal está pronto para ajudar com todas as suas necessidades de conserto e serviços locais.",
-    },
-    {
-      image: heroSlide2,
-      title: "Técnicos Especializados.",
-      description: "Nossa equipe possui anos de experiência em reparos de todos os tipos de eletrodomésticos.",
-    },
-    {
-      image: heroSlide3,
-      title: "Atendimento Rápido.",
-      description: "Diagnóstico gratuito e atendimento em até 24 horas para sua comodidade.",
-    },
-  ];
-
-  useEffect(() => {
-    if (!api) return;
-
-    setCurrent(api.selectedScrollSnap());
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-
-    // Auto-play every 5 seconds
-    const interval = setInterval(() => {
-      api.scrollNext();
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [api]);
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Implement search functionality
+    console.log("Searching for:", searchQuery, "in", location);
+  };
 
   return (
-    <section className="bg-background overflow-hidden">
-      <div className="w-full">
-        <Carousel
-          setApi={setApi}
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full"
-        >
-          <CarouselContent>
-            {slides.map((slide, index) => (
-              <CarouselItem key={index}>
-                <div 
-                  className="relative w-full h-[600px] bg-cover bg-center bg-no-repeat"
-                  style={{ backgroundImage: `url(${slide.image})` }}
-                >
-                  
-                  {/* Conteúdo */}
-                  <div className="container mx-auto px-4 h-full relative z-10">
-                    <div className="flex items-center h-full max-w-xl">
-                      <div>
-                        <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 leading-tight">
-                          {slide.title}
-                        </h1>
-                        <p className="text-lg text-foreground/90 mb-6 font-light">
-                          {slide.description}
-                        </p>
-                        <Button size="lg" variant="secondary" className="rounded-full px-8 font-medium">
-                          PEDIR DIAGNÓSTICO
-                        </Button>
+    <section className="relative h-[500px] overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${slide1})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary-dark/90" />
+      </div>
 
-                        {/* Carousel Dots */}
-                        <div className="flex gap-2 mt-8">
-                          {slides.map((_, dotIndex) => (
-                            <button
-                              key={dotIndex}
-                              onClick={() => api?.scrollTo(dotIndex)}
-                              className={`w-2 h-2 rounded-full transition-colors ${
-                                current === dotIndex ? "bg-primary" : "bg-muted"
-                              }`}
-                              aria-label={`Ir para slide ${dotIndex + 1}`}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="left-4 z-20" />
-          <CarouselNext className="right-4 z-20" />
-        </Carousel>
+      {/* Content */}
+      <div className="relative h-full flex items-center justify-center px-4">
+        <div className="max-w-4xl w-full text-white text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Encontre profissionais qualificados perto de você
+          </h1>
+          <p className="text-lg md:text-xl mb-8 text-white/90">
+            Conectamos você aos melhores profissionais de conserto e manutenção
+          </p>
+
+          {/* Search Form */}
+          <form onSubmit={handleSearch} className="bg-white rounded-lg p-2 shadow-2xl">
+            <div className="flex flex-col md:flex-row gap-2">
+              {/* Search Input */}
+              <div className="flex-1 relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="O que você precisa consertar?"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10 h-12 border-0 focus-visible:ring-0 text-foreground"
+                />
+              </div>
+
+              {/* Location Display */}
+              <div className="flex-1 flex items-center px-3 border-l border-border">
+                <MapPin className="h-5 w-5 text-primary mr-2 flex-shrink-0" />
+                <span className="truncate text-foreground text-sm">
+                  {location.neighborhood && location.city
+                    ? `${location.neighborhood}, ${location.city} - ${location.stateCode}`
+                    : location.city && location.stateCode
+                    ? `${location.city} - ${location.stateCode}`
+                    : "Escolha sua localização"}
+                </span>
+              </div>
+
+              {/* Search Button */}
+              <Button type="submit" size="lg" className="h-12 px-8">
+                Buscar
+              </Button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   );

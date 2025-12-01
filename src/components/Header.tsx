@@ -1,8 +1,9 @@
-import { MapPin, Clock, Phone, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import logoHorizontal from "@/assets/logo-horizontal.png";
 import LocationSelector from "@/components/LocationSelector";
+import { categories } from "@/data/categories";
 
 const Header = () => {
   return (
@@ -25,30 +26,21 @@ const Header = () => {
             <img src={logoHorizontal} alt="Serviço Local" className="h-12" />
           </Link>
 
-          {/* Contact Info */}
-          <div className="hidden lg:flex items-center gap-8">
-            <div className="flex items-center gap-2">
-              <MapPin className="h-5 w-5" />
-              <div className="text-sm">
-                <p>Av. Julia Freire, 1200 - Expedicionários</p>
-                <p>João Pessoa - PB, CEP 58.041-000</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Clock className="h-5 w-5" />
-              <div className="text-sm">
-                <p>Seg-Sex: 9h às 18h</p>
-                <p>Sáb-Dom: 10h às 17h</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Phone className="h-5 w-5" />
-              <div className="text-sm">
-                <p>(12) 98251-9116</p>
-              </div>
-            </div>
+          {/* Categories - Hidden on mobile */}
+          <div className="hidden lg:flex items-center gap-6">
+            {categories.slice(0, 5).map((category) => {
+              const IconComponent = category.icon;
+              return (
+                <Link
+                  key={category.id}
+                  to={`/categoria/${category.slug}`}
+                  className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                >
+                  <IconComponent className="h-5 w-5" />
+                  <span className="text-sm font-medium">{category.name}</span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
