@@ -1,4 +1,5 @@
 import { Star, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { mockProfessionals } from "@/data/professionals";
@@ -11,8 +12,8 @@ const NearbyProfessionals = () => {
   const filteredProfessionals = location.city
     ? mockProfessionals.filter(
         (prof) =>
-          prof.city === location.city &&
-          (!location.neighborhood || prof.neighborhood === location.neighborhood)
+          prof.location.city === location.city &&
+          (!location.neighborhood || prof.location.neighborhood === location.neighborhood)
       )
     : mockProfessionals.slice(0, 6);
 
@@ -44,7 +45,7 @@ const NearbyProfessionals = () => {
                 <div className="flex-1">
                   <h3 className="font-bold text-lg mb-1">{professional.name}</h3>
                   <p className="text-sm text-muted-foreground mb-2">
-                    {professional.category} • {professional.subcategory}
+                    {professional.category}
                   </p>
                   <div className="flex items-center gap-4 text-sm mb-3">
                     <div className="flex items-center gap-1">
@@ -59,8 +60,10 @@ const NearbyProfessionals = () => {
                       <span>{professional.distance}</span>
                     </div>
                   </div>
-                  <Button size="sm" className="w-full">
-                    Ver perfil
+                  <Button size="sm" className="w-full" asChild>
+                    <Link to={`/profissional/${professional.slug}`}>
+                      Ver perfil
+                    </Link>
                   </Button>
                 </div>
               </div>

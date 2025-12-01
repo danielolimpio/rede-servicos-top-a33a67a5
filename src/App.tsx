@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import ServiceDetail from "./pages/ServiceDetail";
 import Category from "./pages/Category";
+import ProfessionalProfile from "./pages/ProfessionalProfile";
 import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/contato" element={<Contact />} />
             <Route path="/servicos/:slug" element={<ServiceDetail />} />
             <Route path="/categoria/:slug" element={<Category />} />
+            <Route path="/profissional/:slug" element={<ProfessionalProfile />} />
             <Route path="/termos-de-uso" element={<TermsOfUse />} />
             <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

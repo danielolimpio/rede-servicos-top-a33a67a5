@@ -44,7 +44,7 @@ const Category = () => {
     const categoryMatch = prof.category === category.name;
     const subcategoryMatch =
       selectedSubcategories.length === 0 ||
-      selectedSubcategories.includes(prof.subcategory);
+      prof.subcategories.some(sub => selectedSubcategories.includes(sub));
     const ratingMatch = prof.rating >= parseFloat(minRating);
     return categoryMatch && subcategoryMatch && ratingMatch;
   });
@@ -197,7 +197,7 @@ const Category = () => {
                                 {professional.name}
                               </h3>
                               <p className="text-muted-foreground">
-                                {professional.category} • {professional.subcategory}
+                                {professional.category} • {professional.subcategories.join(", ")}
                               </p>
                             </div>
                             <div className="flex items-center gap-1">
@@ -213,7 +213,9 @@ const Category = () => {
                             <span>{professional.distance} de você</span>
                           </div>
                           <div className="flex gap-2">
-                            <Button className="flex-1">Ver perfil</Button>
+                            <Button className="flex-1" asChild>
+                              <a href={`/profissional/${professional.slug}`}>Ver perfil</a>
+                            </Button>
                             <Button variant="outline" className="flex-1">
                               Entrar em contato
                             </Button>
