@@ -138,7 +138,7 @@ const LocationSelector = () => {
         onClick={() => setOpen(true)}
         variant="outline"
         size="sm"
-        className="gap-2 border-primary-foreground/20 hover:bg-primary-foreground/10"
+        className="gap-2 bg-primary-dark text-white border-white/20 hover:bg-primary-dark/80"
       >
         <MapPin className="h-4 w-4" />
         <span className="hidden md:inline">
