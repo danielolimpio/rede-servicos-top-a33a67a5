@@ -2,6 +2,7 @@ import { MapPin, Clock, Phone, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import logoHorizontal from "@/assets/logo-horizontal.png";
+import LocationSelector from "@/components/LocationSelector";
 
 const Header = () => {
   return (
@@ -88,9 +89,12 @@ const Header = () => {
             </li>
           </ul>
 
-          <button className="text-foreground hover:text-primary">
-            <Search className="h-5 w-5" />
-          </button>
+          <div className="flex items-center gap-3">
+            <LocationSelector />
+            <button className="text-foreground hover:text-primary">
+              <Search className="h-5 w-5" />
+            </button>
+          </div>
         </div>
       </nav>
     </header>
