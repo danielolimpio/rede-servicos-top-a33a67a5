@@ -1,4 +1,4 @@
-import { Car, Bike, Home, Snowflake, Smartphone, Wind, Sofa, Wrench, Hammer, Droplets, WashingMachine, DoorOpen } from "lucide-react";
+import { Car, Home, Zap, Wrench, Sofa, TreePine, Factory } from "lucide-react";
 
 export interface Subcategory {
   id: string;
@@ -17,18 +17,19 @@ export interface Category {
 
 export const categories: Category[] = [
   {
-    id: "automoveis",
-    name: "Automóveis",
-    slug: "automoveis",
+    id: "veiculos-transporte",
+    name: "Veículos & Transporte",
+    slug: "veiculos-transporte",
     icon: Car,
-    description: "Mecânica, Elétrica, Funilaria, Borracharia, Alinhamento, Acessórios",
+    description: "Carros, Motos, Mecânica, Elétrica, Funilaria, Customização",
     subcategories: [
+      // Automóveis
       { id: "mecanica-geral", name: "Mecânica geral", slug: "mecanica-geral" },
       { id: "injecao-eletronica", name: "Injeção eletrônica", slug: "injecao-eletronica" },
       { id: "cambio-automatico", name: "Câmbio automático / CVT", slug: "cambio-automatico" },
       { id: "sistema-freios", name: "Sistema de freios (ABS incluso)", slug: "sistema-freios" },
       { id: "suspensao-amortecedores", name: "Suspensão e amortecedores", slug: "suspensao-amortecedores" },
-      { id: "eletrica-auto", name: "Elétrica (bateria, alternador, sensores)", slug: "eletrica-auto" },
+      { id: "eletrica-auto", name: "Elétrica automotiva (bateria, alternador)", slug: "eletrica-auto" },
       { id: "ar-automotivo", name: "Ar-condicionado automotivo", slug: "ar-automotivo" },
       { id: "funilaria-pintura", name: "Funilaria e pintura", slug: "funilaria-pintura" },
       { id: "borracharia", name: "Borracharia (pneus, balanceamento)", slug: "borracharia" },
@@ -38,32 +39,25 @@ export const categories: Category[] = [
       { id: "rastreador-alarme", name: "Rastreador e alarme", slug: "rastreador-alarme" },
       { id: "lavagem-higienizacao", name: "Lavagem técnica e higienização", slug: "lavagem-higienizacao" },
       { id: "veiculos-eletricos", name: "Veículos elétricos/híbridos", slug: "veiculos-eletricos" },
-    ],
-  },
-  {
-    id: "motos",
-    name: "Motos",
-    slug: "motos",
-    icon: Bike,
-    description: "Motor, Suspensão, Freios, Customização, Baterias",
-    subcategories: [
-      { id: "motor-2t-4t", name: "Motor (2T/4T)", slug: "motor-2t-4t" },
-      { id: "injecao-efi", name: "Injeção eletrônica (EFI)", slug: "injecao-efi" },
-      { id: "freios-suspensao-moto", name: "Freios e suspensão", slug: "freios-suspensao-moto" },
-      { id: "eletrica-moto", name: "Elétrica (partida, iluminação)", slug: "eletrica-moto" },
+      // Motos
+      { id: "motor-2t-4t", name: "Motor de moto (2T/4T)", slug: "motor-2t-4t" },
+      { id: "injecao-efi", name: "Injeção eletrônica moto (EFI)", slug: "injecao-efi" },
+      { id: "freios-suspensao-moto", name: "Freios e suspensão moto", slug: "freios-suspensao-moto" },
+      { id: "eletrica-moto", name: "Elétrica moto (partida, iluminação)", slug: "eletrica-moto" },
       { id: "transmissao", name: "Transmissão (corrente, cardan)", slug: "transmissao" },
-      { id: "painel-digital", name: "Painel digital", slug: "painel-digital" },
+      { id: "painel-digital", name: "Painel digital moto", slug: "painel-digital" },
       { id: "customizacao", name: "Customização e estética", slug: "customizacao" },
       { id: "baterias-litio", name: "Baterias de lítio", slug: "baterias-litio" },
     ],
   },
   {
-    id: "reformas-construcao",
-    name: "Reformas & Construção",
-    slug: "reformas-construcao",
+    id: "casa-reforma",
+    name: "Casa & Reforma",
+    slug: "casa-reforma",
     icon: Home,
-    description: "Pintura, Revestimento, Marcenaria, Carpintaria, Hidráulica, Elétrica",
+    description: "Reformas, Construção, Climatização, Portas, Janelas, Vidros",
     subcategories: [
+      // Reformas & Construção
       { id: "pintura", name: "Pintura (interna/externa)", slug: "pintura" },
       { id: "revestimento", name: "Revestimento (azulejo, porcelanato)", slug: "revestimento" },
       { id: "hidraulica", name: "Hidráulica", slug: "hidraulica" },
@@ -79,15 +73,31 @@ export const categories: Category[] = [
       { id: "acessibilidade", name: "Acessibilidade", slug: "acessibilidade" },
       { id: "iluminacao-inteligente", name: "Iluminação inteligente", slug: "iluminacao-inteligente" },
       { id: "home-office", name: "Home office / estúdios", slug: "home-office" },
+      // Climatização
+      { id: "ar-split", name: "Ar-condicionado split", slug: "ar-split" },
+      { id: "ar-janela", name: "Ar-condicionado janela", slug: "ar-janela" },
+      { id: "ar-portatil", name: "Ar-condicionado portátil", slug: "ar-portatil" },
+      { id: "climatizadores", name: "Climatizadores evaporativos", slug: "climatizadores" },
+      { id: "dreno-entupido", name: "Dreno entupido", slug: "dreno-entupido" },
+      { id: "recarga-gas", name: "Recarga de gás", slug: "recarga-gas" },
+      { id: "manutencao-preventiva", name: "Manutenção preventiva climatização", slug: "manutencao-preventiva" },
+      { id: "controle-remoto-wifi", name: "Controle remoto / Wi-Fi", slug: "controle-remoto-wifi" },
+      { id: "unidade-externa", name: "Unidade externa", slug: "unidade-externa" },
+      // Portas, Janelas & Vidros
+      { id: "persiana", name: "Persiana (motorizada/manual)", slug: "persiana" },
+      { id: "vidro-temperado", name: "Vidro temperado", slug: "vidro-temperado" },
+      { id: "vedacao", name: "Vedação", slug: "vedacao" },
+      { id: "porta-correr", name: "Porta de correr (trilhos)", slug: "porta-correr" },
     ],
   },
   {
-    id: "eletrodomesticos",
-    name: "Eletrodomésticos",
-    slug: "eletrodomesticos",
-    icon: Snowflake,
-    description: "Geladeira, Máquina de Lavar, Micro-ondas, Fogão, Liquidificador, Café",
+    id: "eletrodomesticos-eletronicos",
+    name: "Eletrodomésticos & Eletrônicos",
+    slug: "eletrodomesticos-eletronicos",
+    icon: Zap,
+    description: "Geladeira, Máquina de Lavar, Celular, Computador, TV, Equipamentos Médicos",
     subcategories: [
+      // Eletrodomésticos
       { id: "geladeira", name: "Geladeira", slug: "geladeira" },
       { id: "maquina-lavar-roupas", name: "Máquina de lavar roupas", slug: "maquina-lavar-roupas" },
       { id: "maquina-lavar-loucas", name: "Máquina de lavar louças", slug: "maquina-lavar-loucas" },
@@ -107,15 +117,7 @@ export const categories: Category[] = [
       { id: "maquina-cafe", name: "Máquina de café", slug: "maquina-cafe" },
       { id: "panela-pressao", name: "Panela de pressão elétrica", slug: "panela-pressao" },
       { id: "eletrodomesticos-iot", name: "Eletrodomésticos inteligentes (IoT)", slug: "eletrodomesticos-iot" },
-    ],
-  },
-  {
-    id: "eletronicos",
-    name: "Eletrônicos",
-    slug: "eletronicos",
-    icon: Smartphone,
-    description: "Celular, Computador, TV, Som, Câmeras, Equipamentos médicos",
-    subcategories: [
+      // Eletrônicos
       { id: "celular", name: "Celular", slug: "celular" },
       { id: "computador", name: "Computador (note/desktop)", slug: "computador" },
       { id: "tablet", name: "Tablet", slug: "tablet" },
@@ -133,47 +135,13 @@ export const categories: Category[] = [
     ],
   },
   {
-    id: "climatizacao",
-    name: "Climatização",
-    slug: "climatizacao",
-    icon: Wind,
-    description: "Instalação, Manutenção, Limpeza, Vazamento",
-    subcategories: [
-      { id: "ar-split", name: "Ar-condicionado split", slug: "ar-split" },
-      { id: "ar-janela", name: "Ar-condicionado janela", slug: "ar-janela" },
-      { id: "ar-portatil", name: "Ar-condicionado portátil", slug: "ar-portatil" },
-      { id: "ar-automotivo-clima", name: "Ar-condicionado automotivo", slug: "ar-automotivo-clima" },
-      { id: "climatizadores", name: "Climatizadores evaporativos", slug: "climatizadores" },
-      { id: "dreno-entupido", name: "Dreno entupido", slug: "dreno-entupido" },
-      { id: "recarga-gas", name: "Recarga de gás", slug: "recarga-gas" },
-      { id: "manutencao-preventiva", name: "Manutenção preventiva", slug: "manutencao-preventiva" },
-      { id: "controle-remoto-wifi", name: "Controle remoto / Wi-Fi", slug: "controle-remoto-wifi" },
-      { id: "unidade-externa", name: "Unidade externa", slug: "unidade-externa" },
-    ],
-  },
-  {
-    id: "moveis-madeira",
-    name: "Móveis & Madeira",
-    slug: "moveis-madeira",
-    icon: Sofa,
-    description: "Conserto, Restauração, Estofamento, Marcenaria sob medida",
-    subcategories: [
-      { id: "conserto-moveis", name: "Conserto de móveis (cadeiras, mesas)", slug: "conserto-moveis" },
-      { id: "restauracao", name: "Restauração (lixamento, verniz)", slug: "restauracao" },
-      { id: "estofamento", name: "Estofamento (sofás, poltronas)", slug: "estofamento" },
-      { id: "moveis-planejados", name: "Móveis planejados", slug: "moveis-planejados" },
-      { id: "dobradicas-trilhos", name: "Dobradiças e trilhos", slug: "dobradicas-trilhos" },
-      { id: "nivelamento", name: "Nivelamento", slug: "nivelamento" },
-      { id: "instrumentos-musicais", name: "Instrumentos musicais", slug: "instrumentos-musicais" },
-    ],
-  },
-  {
-    id: "servicos-gerais",
-    name: "Serviços Gerais",
-    slug: "servicos-gerais",
+    id: "servicos-tecnicos-emergencias",
+    name: "Serviços Técnicos & Emergências",
+    slug: "servicos-tecnicos-emergencias",
     icon: Wrench,
-    description: "Chaveiro, Encanador, Eletricista, Serralheiro",
+    description: "Encanador, Eletricista, Chaveiro, Desentupimento, SOS 24h",
     subcategories: [
+      // Serviços Gerais
       { id: "encanador", name: "Encanador", slug: "encanador" },
       { id: "eletricista", name: "Eletricista", slug: "eletricista" },
       { id: "chaveiro", name: "Chaveiro", slug: "chaveiro" },
@@ -185,16 +153,7 @@ export const categories: Category[] = [
       { id: "cisterna-reservatorios", name: "Cisterna / reservatórios", slug: "cisterna-reservatorios" },
       { id: "limpeza-tecnica", name: "Limpeza técnica", slug: "limpeza-tecnica" },
       { id: "sos-emergencial", name: "SOS emergencial", slug: "sos-emergencial" },
-      { id: "pet-services", name: "Pet-services técnicos", slug: "pet-services" },
-    ],
-  },
-  {
-    id: "ferramentas-equipamentos",
-    name: "Ferramentas e Equipamentos",
-    slug: "ferramentas-equipamentos",
-    icon: Hammer,
-    description: "Furadeiras, Motosserras, Geradores, Compressores",
-    subcategories: [
+      // Ferramentas domésticas
       { id: "furadeiras-parafusadeiras", name: "Furadeiras/parafusadeiras", slug: "furadeiras-parafusadeiras" },
       { id: "motosserras-rocadeiras", name: "Motosserras/roçadeiras", slug: "motosserras-rocadeiras" },
       { id: "geradores", name: "Geradores", slug: "geradores" },
@@ -203,43 +162,50 @@ export const categories: Category[] = [
     ],
   },
   {
-    id: "jardim-irrigacao",
-    name: "Jardim & Irrigação",
-    slug: "jardim-irrigacao",
-    icon: Droplets,
-    description: "Regador automático, Válvulas, Gotejamento, Iluminação",
+    id: "moveis-artesanato",
+    name: "Móveis & Artesanato",
+    slug: "moveis-artesanato",
+    icon: Sofa,
+    description: "Conserto, Restauração, Estofamento, Marcenaria, Instrumentos Musicais",
     subcategories: [
+      { id: "conserto-moveis", name: "Conserto de móveis (cadeiras, mesas)", slug: "conserto-moveis" },
+      { id: "restauracao", name: "Restauração (lixamento, verniz)", slug: "restauracao" },
+      { id: "estofamento", name: "Estofamento (sofás, poltronas)", slug: "estofamento" },
+      { id: "moveis-planejados", name: "Móveis planejados", slug: "moveis-planejados" },
+      { id: "dobradicas-trilhos", name: "Dobradiças e trilhos", slug: "dobradicas-trilhos" },
+      { id: "nivelamento", name: "Nivelamento", slug: "nivelamento" },
+      { id: "instrumentos-musicais", name: "Instrumentos musicais", slug: "instrumentos-musicais" },
+    ],
+  },
+  {
+    id: "jardim-lazer-pet",
+    name: "Jardim, Lazer & Pet",
+    slug: "jardim-lazer-pet",
+    icon: TreePine,
+    description: "Irrigação, Iluminação de jardim, Bomba de fonte, Pet-services técnicos",
+    subcategories: [
+      // Jardim & Irrigação
       { id: "regador-automatico", name: "Regador automático", slug: "regador-automatico" },
       { id: "valvulas-solenoides", name: "Válvulas solenoides", slug: "valvulas-solenoides" },
       { id: "sistema-gotejamento", name: "Sistema de gotejamento", slug: "sistema-gotejamento" },
       { id: "bomba-fonte", name: "Bomba de fonte", slug: "bomba-fonte" },
       { id: "iluminacao-jardim", name: "Iluminação de jardim", slug: "iluminacao-jardim" },
+      // Pet-services
+      { id: "pet-services", name: "Pet-services técnicos", slug: "pet-services" },
     ],
   },
   {
-    id: "lavanderia-profissional",
-    name: "Lavanderia Profissional",
-    slug: "lavanderia-profissional",
-    icon: WashingMachine,
-    description: "Lavadoras industriais, Secadoras, Calandras, Dosadores",
+    id: "equipamentos-profissionais",
+    name: "Equipamentos Profissionais",
+    slug: "equipamentos-profissionais",
+    icon: Factory,
+    description: "Lavanderia Industrial, Equipamentos Comerciais",
     subcategories: [
+      // Lavanderia Profissional
       { id: "lavadoras-industriais", name: "Lavadoras industriais", slug: "lavadoras-industriais" },
       { id: "secadoras-tambor", name: "Secadoras de tambor", slug: "secadoras-tambor" },
       { id: "calandras", name: "Calandras", slug: "calandras" },
       { id: "dosadores-automaticos", name: "Dosadores automáticos", slug: "dosadores-automaticos" },
-    ],
-  },
-  {
-    id: "portas-janelas-vidros",
-    name: "Portas, Janelas & Vidros",
-    slug: "portas-janelas-vidros",
-    icon: DoorOpen,
-    description: "Persiana, Vidro temperado, Vedação, Porta de correr",
-    subcategories: [
-      { id: "persiana", name: "Persiana (motorizada/manual)", slug: "persiana" },
-      { id: "vidro-temperado", name: "Vidro temperado", slug: "vidro-temperado" },
-      { id: "vedacao", name: "Vedação", slug: "vedacao" },
-      { id: "porta-correr", name: "Porta de correr (trilhos)", slug: "porta-correr" },
     ],
   },
 ];
