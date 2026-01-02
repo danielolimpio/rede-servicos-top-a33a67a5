@@ -1,19 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Search, MapPin } from "lucide-react";
 import { useLocation } from "@/contexts/LocationContext";
 import slide1 from "@/assets/hero-slide-1.jpg";
+import SearchCommand from "@/components/SearchCommand";
 
 const Hero = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchOpen, setSearchOpen] = useState(false);
   const { location } = useLocation();
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Implement search functionality
-    console.log("Searching for:", searchQuery, "in", location);
-  };
 
   return (
     <section className="relative h-[500px] overflow-hidden">
@@ -35,19 +29,18 @@ const Hero = () => {
             Conectamos você aos melhores profissionais de conserto e manutenção
           </p>
 
-          {/* Search Form */}
-          <form onSubmit={handleSearch} className="bg-white rounded-lg p-2 shadow-2xl">
+          {/* Search Trigger */}
+          <div 
+            onClick={() => setSearchOpen(true)}
+            className="bg-white rounded-lg p-2 shadow-2xl cursor-pointer hover:shadow-3xl transition-shadow"
+          >
             <div className="flex flex-col md:flex-row gap-2">
-              {/* Search Input */}
+              {/* Search Input (Visual trigger) */}
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input
-                  type="text"
-                  placeholder="O que você precisa consertar?"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 h-12 border-0 focus-visible:ring-0 text-foreground"
-                />
+                <div className="pl-10 h-12 flex items-center text-muted-foreground text-left">
+                  O que você precisa consertar?
+                </div>
               </div>
 
               {/* Location Display */}
@@ -63,11 +56,14 @@ const Hero = () => {
               </div>
 
               {/* Search Button */}
-              <Button type="submit" size="lg" className="h-12 px-8">
+              <Button size="lg" className="h-12 px-8">
                 Buscar
               </Button>
             </div>
-          </form>
+          </div>
+
+          {/* Search Command Dialog */}
+          <SearchCommand open={searchOpen} onOpenChange={setSearchOpen} />
         </div>
       </div>
     </section>
