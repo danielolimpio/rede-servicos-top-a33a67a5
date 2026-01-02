@@ -1,12 +1,18 @@
+import { useState } from "react";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import logoHorizontal from "@/assets/logo-horizontal.png";
 import LocationSelector from "@/components/LocationSelector";
 import { categories } from "@/data/categories";
+import SearchCommand from "@/components/SearchCommand";
 
 const Header = () => {
+  const [searchOpen, setSearchOpen] = useState(false);
+
   return (
+    <>
+      <SearchCommand open={searchOpen} onOpenChange={setSearchOpen} />
     <header className="w-full">
       {/* Top Bar - Dark Blue */}
       <div className="bg-primary-dark text-white py-2 px-4">
@@ -63,7 +69,11 @@ const Header = () => {
           {/* Right side: Location and Search */}
           <div className="flex items-center gap-3">
             <LocationSelector />
-            <button className="text-white hover:opacity-80 transition-opacity">
+            <button 
+              onClick={() => setSearchOpen(true)}
+              className="text-white hover:opacity-80 transition-opacity"
+              aria-label="Abrir busca"
+            >
               <Search className="h-5 w-5" />
             </button>
           </div>
@@ -90,7 +100,8 @@ const Header = () => {
           </div>
         </div>
       </nav>
-    </header>
+      </header>
+    </>
   );
 };
 
