@@ -14,7 +14,189 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      professional_gallery: {
+        Row: {
+          caption: string | null
+          created_at: string
+          display_order: number | null
+          id: string
+          image_url: string
+          professional_id: string
+        }
+        Insert: {
+          caption?: string | null
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          image_url: string
+          professional_id: string
+        }
+        Update: {
+          caption?: string | null
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          image_url?: string
+          professional_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "professional_gallery_professional_id_fkey"
+            columns: ["professional_id"]
+            isOneToOne: false
+            referencedRelation: "professionals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      professional_specialties: {
+        Row: {
+          category_id: string
+          category_name: string
+          created_at: string
+          id: string
+          professional_id: string
+          subcategory_id: string
+          subcategory_name: string
+        }
+        Insert: {
+          category_id: string
+          category_name: string
+          created_at?: string
+          id?: string
+          professional_id: string
+          subcategory_id: string
+          subcategory_name: string
+        }
+        Update: {
+          category_id?: string
+          category_name?: string
+          created_at?: string
+          id?: string
+          professional_id?: string
+          subcategory_id?: string
+          subcategory_name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "professional_specialties_professional_id_fkey"
+            columns: ["professional_id"]
+            isOneToOne: false
+            referencedRelation: "professionals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      professionals: {
+        Row: {
+          address: string | null
+          business_name: string
+          city: string
+          cnpj_cpf: string | null
+          created_at: string
+          description: string | null
+          email: string
+          id: string
+          is_active: boolean
+          is_approved: boolean
+          neighborhood: string | null
+          phone: string
+          photo_url: string | null
+          rating: number | null
+          review_count: number | null
+          service_radius_km: number
+          slug: string
+          state_code: string
+          updated_at: string
+          user_id: string
+          whatsapp: string | null
+        }
+        Insert: {
+          address?: string | null
+          business_name: string
+          city: string
+          cnpj_cpf?: string | null
+          created_at?: string
+          description?: string | null
+          email: string
+          id?: string
+          is_active?: boolean
+          is_approved?: boolean
+          neighborhood?: string | null
+          phone: string
+          photo_url?: string | null
+          rating?: number | null
+          review_count?: number | null
+          service_radius_km?: number
+          slug: string
+          state_code: string
+          updated_at?: string
+          user_id: string
+          whatsapp?: string | null
+        }
+        Update: {
+          address?: string | null
+          business_name?: string
+          city?: string
+          cnpj_cpf?: string | null
+          created_at?: string
+          description?: string | null
+          email?: string
+          id?: string
+          is_active?: boolean
+          is_approved?: boolean
+          neighborhood?: string | null
+          phone?: string
+          photo_url?: string | null
+          rating?: number | null
+          review_count?: number | null
+          service_radius_km?: number
+          slug?: string
+          state_code?: string
+          updated_at?: string
+          user_id?: string
+          whatsapp?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "professionals_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          email: string
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          email: string
+          full_name?: string | null
+          id: string
+          phone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
