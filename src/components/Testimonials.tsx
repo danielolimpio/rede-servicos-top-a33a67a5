@@ -38,9 +38,9 @@ const Testimonials = () => {
           Depoimentos de Clientes Felizes
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl lg:max-w-none mx-auto">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-card rounded-lg p-6 shadow-sm border border-border">
+            <div key={index} className="bg-card rounded-lg p-6 shadow-sm border border-border w-full">
               <div className="flex items-center gap-3 mb-4">
                 <img 
                   src={testimonial.image} 

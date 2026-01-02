@@ -26,8 +26,8 @@ const MobileMenu = ({ onSearchOpen }: MobileMenuProps) => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="lg:hidden text-white hover:bg-white/10">
-          <Menu className="h-6 w-6" />
+        <Button variant="ghost" size="icon" className="lg:hidden text-white hover:bg-white/10 h-10 w-10">
+          <Menu className="h-7 w-7" />
           <span className="sr-only">Abrir menu</span>
         </Button>
       </SheetTrigger>

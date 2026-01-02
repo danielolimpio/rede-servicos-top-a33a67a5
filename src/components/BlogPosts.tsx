@@ -54,9 +54,9 @@ const BlogPosts = () => {
           Últimos Artigos do Blog
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 max-w-5xl lg:max-w-none mx-auto">
           {posts.map((post, index) => (
-            <article key={index} className="bg-background rounded-lg overflow-hidden shadow-sm">
+            <article key={index} className="bg-background rounded-lg overflow-hidden shadow-sm w-full">
               <div className="h-48 bg-gradient-to-br from-primary to-secondary"></div>
               <div className="p-6">
                 <span className="text-xs font-semibold text-secondary uppercase">{post.category}</span>

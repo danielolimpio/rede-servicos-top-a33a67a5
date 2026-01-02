@@ -33,9 +33,9 @@ const NearbyProfessionals = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {displayProfessionals.map((professional) => (
-            <Card key={professional.id} className="p-6 hover:shadow-lg transition-shadow">
+            <Card key={professional.id} className="p-6 hover:shadow-lg transition-shadow w-full">
               <div className="flex gap-4">
                 <img
                   src={professional.photo}
