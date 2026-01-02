@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
-import CategoriesGrid from "@/components/CategoriesGrid";
+import CategoriesCarousel from "@/components/CategoriesCarousel";
 import NearbyProfessionals from "@/components/NearbyProfessionals";
 import Manufacturers from "@/components/Manufacturers";
 import Testimonials from "@/components/Testimonials";
@@ -15,7 +15,7 @@ const Index = () => {
       <main>
         <Hero />
         <Stats />
-        <CategoriesGrid />
+        <CategoriesCarousel />
         <NearbyProfessionals />
         <Manufacturers />
         <Testimonials />
