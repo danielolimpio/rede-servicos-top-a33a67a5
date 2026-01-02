@@ -22,6 +22,7 @@ import Dashboard from "./pages/Dashboard";
 import ProfessionalRegistration from "./pages/ProfessionalRegistration";
 import EditProfessional from "./pages/EditProfessional";
 import GalleryManagement from "./pages/GalleryManagement";
+import AdminProfessionals from "./pages/AdminProfessionals";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
               <Route path="/painel/cadastro" element={<ProfessionalRegistration />} />
               <Route path="/painel/editar" element={<EditProfessional />} />
               <Route path="/painel/galeria" element={<GalleryManagement />} />
+              <Route path="/admin/profissionais" element={<AdminProfessionals />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
