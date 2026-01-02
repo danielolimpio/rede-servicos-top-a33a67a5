@@ -28,51 +28,20 @@ const Header = () => {
         {/* Main Header - Primary Blue with Navigation */}
         <div className="bg-primary text-white py-3 sm:py-4 px-4">
           <div className="container mx-auto flex items-center justify-between">
-            {/* Mobile Menu Button */}
-            <MobileMenu onSearchOpen={() => setSearchOpen(true)} />
-
-            {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <img src={logoHorizontal} alt="Serviço Local" className="h-8 sm:h-12" />
-            </Link>
-
-            {/* Navigation - Hidden on mobile */}
-            <ul className="hidden lg:flex items-center gap-6">
-              <li>
-                <Link to="/" className="text-white hover:opacity-80 font-medium transition-opacity">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicos" className="text-white hover:opacity-80 font-medium transition-opacity">
-                  Serviços
-                </Link>
-              </li>
-              <li>
-                <Link to="/sobre" className="text-white hover:opacity-80 font-medium transition-opacity">
-                  Sobre
-                </Link>
-              </li>
-              <li>
-                <Link to="/galeria" className="text-white hover:opacity-80 font-medium transition-opacity">
-                  Galeria
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-white hover:opacity-80 font-medium transition-opacity">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/contato" className="text-white hover:opacity-80 font-medium transition-opacity">
-                  Contato
-                </Link>
-              </li>
-            </ul>
-
-            {/* Right side: Location and Search */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            {/* Mobile: Evenly distributed layout */}
+            <div className="flex lg:hidden items-center justify-between w-full">
+              {/* Menu Hamburguer */}
+              <MobileMenu onSearchOpen={() => setSearchOpen(true)} />
+              
+              {/* Logo */}
+              <Link to="/" className="flex items-center">
+                <img src={logoHorizontal} alt="Serviço Local" className="h-8" />
+              </Link>
+              
+              {/* Location */}
               <LocationSelector />
+              
+              {/* Search */}
               <button 
                 onClick={() => setSearchOpen(true)}
                 className="text-white hover:opacity-80 transition-opacity"
@@ -80,6 +49,60 @@ const Header = () => {
               >
                 <Search className="h-5 w-5" />
               </button>
+            </div>
+
+            {/* Desktop: Original layout */}
+            <div className="hidden lg:flex items-center justify-between w-full">
+              {/* Logo */}
+              <Link to="/" className="flex items-center">
+                <img src={logoHorizontal} alt="Serviço Local" className="h-12" />
+              </Link>
+
+              {/* Navigation */}
+              <ul className="flex items-center gap-6">
+                <li>
+                  <Link to="/" className="text-white hover:opacity-80 font-medium transition-opacity">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/servicos" className="text-white hover:opacity-80 font-medium transition-opacity">
+                    Serviços
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/sobre" className="text-white hover:opacity-80 font-medium transition-opacity">
+                    Sobre
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/galeria" className="text-white hover:opacity-80 font-medium transition-opacity">
+                    Galeria
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog" className="text-white hover:opacity-80 font-medium transition-opacity">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contato" className="text-white hover:opacity-80 font-medium transition-opacity">
+                    Contato
+                  </Link>
+                </li>
+              </ul>
+
+              {/* Right side: Location and Search */}
+              <div className="flex items-center gap-3">
+                <LocationSelector />
+                <button 
+                  onClick={() => setSearchOpen(true)}
+                  className="text-white hover:opacity-80 transition-opacity"
+                  aria-label="Abrir busca"
+                >
+                  <Search className="h-5 w-5" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
