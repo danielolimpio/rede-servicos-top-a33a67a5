@@ -10,7 +10,7 @@ const Hero = () => {
   const { location } = useLocation();
 
   return (
-    <section className="relative h-[500px] overflow-hidden">
+    <section className="relative h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -22,10 +22,10 @@ const Hero = () => {
       {/* Content */}
       <div className="relative h-full flex items-center justify-center px-4">
         <div className="max-w-4xl w-full text-white text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
             Encontre profissionais qualificados perto de você
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-white/90">
+          <p className="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 text-white/90 px-2">
             Conectamos você aos melhores profissionais de conserto e manutenção
           </p>
 
