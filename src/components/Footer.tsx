@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.png";
 
 const Footer = () => {
@@ -70,8 +71,8 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p>© Copyright 2025 | Todos os Direitos Reservados | Desenvolvido por <a href="https://danielolimpio.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">DanielOlimpio</a></p>
             <div className="flex gap-4">
-              <a href="/termos-de-uso" className="hover:text-secondary transition-colors">Termos de Uso</a>
-              <a href="/politica-de-privacidade" className="hover:text-secondary transition-colors">Política de Privacidade</a>
+              <Link to="/termos-de-uso" className="hover:text-secondary transition-colors">Termos de Uso</Link>
+              <Link to="/politica-de-privacidade" className="hover:text-secondary transition-colors">Política de Privacidade</Link>
             </div>
           </div>
         </div>

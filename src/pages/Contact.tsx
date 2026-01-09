@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -68,6 +69,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Contato - Fale Conosco"
+        description="Entre em contato com o Serviço Local. Tire suas dúvidas, solicite orçamento ou encontre um técnico especializado. Atendimento rápido e eficiente."
+        canonical="/contato"
+        keywords="contato serviço local, fale conosco, orçamento eletrodomésticos, atendimento técnico, suporte"
+      />
       <Header />
       
       {/* Hero Section */}

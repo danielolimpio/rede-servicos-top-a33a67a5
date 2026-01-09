@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Calendar, User, ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -76,6 +77,12 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Blog - Dicas e Guias de Manutenção"
+        description="Blog do Serviço Local com dicas, guias e informações sobre manutenção e cuidados com seus eletrodomésticos. Aprenda a economizar e prolongar a vida útil dos seus aparelhos."
+        canonical="/blog"
+        keywords="blog eletrodomésticos, dicas de manutenção, guias de conserto, economia de energia, cuidados com aparelhos"
+      />
       <Header />
       
       {/* Hero Section */}

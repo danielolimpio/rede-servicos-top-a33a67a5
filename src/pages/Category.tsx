@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { categories } from "@/data/categories";
 import { mockProfessionals } from "@/data/professionals";
 import { Star, MapPin, SlidersHorizontal } from "lucide-react";
@@ -28,6 +29,11 @@ const Category = () => {
   if (!category) {
     return (
       <div className="min-h-screen">
+        <SEO 
+          title="Categoria não encontrada"
+          description="A categoria que você está procurando não foi encontrada."
+          noIndex={true}
+        />
         <Header />
         <div className="container mx-auto py-20 text-center">
           <h1 className="text-3xl font-bold">Categoria não encontrada</h1>
@@ -122,6 +128,12 @@ const Category = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title={`${category.name} - Profissionais Especializados`}
+        description={`Encontre profissionais especializados em ${category.name}. ${category.description} Técnicos qualificados na sua região.`}
+        canonical={`/categoria/${category.slug}`}
+        keywords={`${category.name.toLowerCase()}, profissionais ${category.name.toLowerCase()}, técnicos especializados, assistência técnica`}
+      />
       <Header />
       <main>
         {/* Category Header */}

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
@@ -9,6 +10,12 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Política de Privacidade"
+        description="Política de privacidade do Serviço Local. Saiba como coletamos, usamos e protegemos seus dados pessoais em conformidade com a LGPD."
+        canonical="/politica-de-privacidade"
+        keywords="política de privacidade, LGPD, proteção de dados, privacidade, dados pessoais"
+      />
       <Header />
       <main className="flex-grow bg-background">
         <article className="container mx-auto px-4 py-16 max-w-4xl">

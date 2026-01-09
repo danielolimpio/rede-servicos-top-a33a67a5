@@ -1,21 +1,26 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import iceMaker from "@/assets/ice-maker.jpg";
 
 const ServiceDetail = () => {
+  const { slug } = useParams();
+  
   const services = [
-    { title: "Conserto de Geladeira", slug: "conserto-de-geladeira" },
-    { title: "Conserto de Fogão", slug: "conserto-de-fogao" },
-    { title: "Peças de Eletrodomésticos", slug: "pecas-de-eletrodomesticos" },
-    { title: "Conserto de Microondas", slug: "conserto-de-microondas" },
-    { title: "Conserto de Máquina de Lavar", slug: "conserto-de-maquina-de-lavar" },
-    { title: "Conserto de Coifa", slug: "conserto-de-coifa" },
+    { title: "Conserto de Geladeira", slug: "conserto-de-geladeira", description: "Especialistas em manutenção e reparo de refrigeradores de todas as marcas." },
+    { title: "Conserto de Fogão", slug: "conserto-de-fogao", description: "Reparo de fogões e cooktops elétricos e a gás." },
+    { title: "Peças de Eletrodomésticos", slug: "pecas-de-eletrodomesticos", description: "Fornecemos peças originais e compatíveis para todos os eletrodomésticos." },
+    { title: "Conserto de Microondas", slug: "conserto-de-microondas", description: "Especialistas em micro-ondas de todas as marcas." },
+    { title: "Conserto de Máquina de Lavar", slug: "conserto-de-maquina-de-lavar", description: "Técnicos especializados em lavadoras e secadoras." },
+    { title: "Conserto de Coifa", slug: "conserto-de-coifa", description: "Manutenção e reparo de coifas e depuradores." },
   ];
+
+  const currentService = services.find(s => s.slug === slug) || services[0];
 
   const parts = [
     "Módulo de controle",
@@ -33,6 +38,12 @@ const ServiceDetail = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title={`${currentService.title} - Assistência Técnica Especializada`}
+        description={`${currentService.description} Orçamento grátis, atendimento rápido e peças originais. Encontre técnicos especializados na sua região.`}
+        canonical={`/servicos/${currentService.slug}`}
+        keywords={`${currentService.title.toLowerCase()}, assistência técnica, reparo, manutenção, técnico especializado, peças originais`}
+      />
       <Header />
 
       <main className="py-8">
@@ -72,11 +83,11 @@ const ServiceDetail = () => {
                 <div className="flex flex-col md:flex-row items-center gap-6">
                   <img
                     src={iceMaker}
-                    alt="Conserto de Geladeira"
+                    alt={currentService.title}
                     className="w-48 h-48 object-contain"
                   />
                   <div className="flex-1">
-                    <h1 className="text-4xl font-bold mb-4">Conserto de Geladeira</h1>
+                    <h1 className="text-4xl font-bold mb-4">{currentService.title}</h1>
                     <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                       <Button variant="secondary" size="lg" className="rounded-full">
                         PEDIR ORÇAMENTO GRÁTIS

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const TermsOfUse = () => {
   useEffect(() => {
@@ -9,6 +10,12 @@ const TermsOfUse = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Termos de Uso"
+        description="Leia os termos de uso do Serviço Local. Informações sobre a natureza do serviço, responsabilidades, processo de aprovação de profissionais e políticas da plataforma."
+        canonical="/termos-de-uso"
+        keywords="termos de uso, política de uso, regras da plataforma, responsabilidades, serviço local termos"
+      />
       <Header />
       <main className="flex-grow bg-background">
         <article className="container mx-auto px-4 py-16 max-w-4xl">
