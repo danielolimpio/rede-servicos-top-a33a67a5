@@ -7,10 +7,17 @@ import Manufacturers from "@/components/Manufacturers";
 import Testimonials from "@/components/Testimonials";
 import BlogPosts from "@/components/BlogPosts";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Conserto de Eletrodomésticos Profissional"
+        description="Encontre técnicos especializados em conserto de geladeira, fogão, máquina de lavar, micro-ondas e ar condicionado na sua região. Orçamento grátis e atendimento rápido."
+        canonical="/"
+        keywords="conserto de eletrodomésticos, assistência técnica, reparo de geladeira, conserto de máquina de lavar, manutenção de ar condicionado, técnico de fogão, reparo de micro-ondas"
+      />
       <Header />
       <main>
         <Hero />

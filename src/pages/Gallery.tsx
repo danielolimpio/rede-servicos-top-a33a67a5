@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { useState } from "react";
 import { X } from "lucide-react";
 import refrigerator from "@/assets/refrigerator.jpg";
@@ -41,6 +42,12 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Galeria de Serviços - Trabalhos Realizados"
+        description="Veja a galeria de serviços realizados pelos nossos profissionais parceiros. Fotos de consertos de geladeiras, máquinas de lavar, fogões, TVs e muito mais."
+        canonical="/galeria"
+        keywords="galeria de serviços, trabalhos realizados, fotos de consertos, portfólio técnicos, reparos eletrodomésticos"
+      />
       <Header />
       
       {/* Hero Section */}

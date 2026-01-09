@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { 
   Refrigerator, 
@@ -84,6 +85,12 @@ const Services = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Serviços de Conserto de Eletrodomésticos"
+        description="Conheça todos os serviços de conserto e manutenção de eletrodomésticos: geladeira, máquina de lavar, ar condicionado, fogão, micro-ondas, TV e mais. Profissionais qualificados."
+        canonical="/servicos"
+        keywords="serviços de conserto, manutenção de eletrodomésticos, reparo de geladeira, conserto de fogão, assistência técnica, técnicos especializados"
+      />
       <Header />
       
       {/* Hero Section */}

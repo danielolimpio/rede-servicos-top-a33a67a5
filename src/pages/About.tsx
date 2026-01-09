@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Award, Users, Clock, ThumbsUp, Target, Heart, Shield } from "lucide-react";
 import heroTechnician from "@/assets/hero-technician.jpg";
 
@@ -31,6 +32,12 @@ const About = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Sobre Nós - Quem Somos"
+        description="Conheça o Serviço Local: a maior plataforma de divulgação de profissionais autônomos em conserto de eletrodomésticos do Brasil. Nossa missão, valores e história."
+        canonical="/sobre"
+        keywords="sobre serviço local, quem somos, plataforma de técnicos, profissionais de eletrodomésticos, assistência técnica Brasil"
+      />
       <Header />
       
       {/* Hero Section */}
