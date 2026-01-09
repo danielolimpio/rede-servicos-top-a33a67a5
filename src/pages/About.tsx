@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Award, Users, Clock, ThumbsUp, Target, Heart, Shield } from "lucide-react";
-import heroTechnician from "@/assets/hero-technician.jpg";
+import aboutTechnician from "@/assets/about-technician.png";
 
 const About = () => {
   const values = [
@@ -58,9 +58,9 @@ const About = () => {
             
             <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <img 
-                src={heroTechnician} 
-                alt="Técnico profissional" 
-                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
+                src={aboutTechnician} 
+                alt="Técnico profissional realizando manutenção em ar-condicionado" 
+                className="rounded-2xl shadow-2xl w-full h-[400px] object-contain"
               />
             </div>
           </div>
