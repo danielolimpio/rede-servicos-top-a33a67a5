@@ -49,6 +49,8 @@ const App = () => (
               <Route path="/auth" element={<Auth />} />
               <Route path="/painel" element={<Dashboard />} />
               <Route path="/painel/cadastro" element={<ProfessionalRegistration />} />
+              <Route path="/cadastro" element={<ProfessionalRegistration />} />
+              <Route path="/cadastro-profissional" element={<ProfessionalRegistration />} />
               <Route path="/painel/editar" element={<EditProfessional />} />
               <Route path="/painel/galeria" element={<GalleryManagement />} />
               <Route path="/admin/profissionais" element={<AdminProfessionals />} />
