@@ -47,6 +47,13 @@ export type Database = {
             referencedRelation: "professionals"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "professional_gallery_professional_id_fkey"
+            columns: ["professional_id"]
+            isOneToOne: false
+            referencedRelation: "professionals_public"
+            referencedColumns: ["id"]
+          },
         ]
       }
       professional_specialties: {
@@ -83,6 +90,13 @@ export type Database = {
             columns: ["professional_id"]
             isOneToOne: false
             referencedRelation: "professionals"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "professional_specialties_professional_id_fkey"
+            columns: ["professional_id"]
+            isOneToOne: false
+            referencedRelation: "professionals_public"
             referencedColumns: ["id"]
           },
         ]
@@ -220,7 +234,83 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      professionals_public: {
+        Row: {
+          address: string | null
+          business_name: string | null
+          city: string | null
+          created_at: string | null
+          description: string | null
+          email: string | null
+          id: string | null
+          is_active: boolean | null
+          is_approved: boolean | null
+          neighborhood: string | null
+          phone: string | null
+          photo_url: string | null
+          rating: number | null
+          review_count: number | null
+          service_radius_km: number | null
+          slug: string | null
+          state_code: string | null
+          updated_at: string | null
+          user_id: string | null
+          whatsapp: string | null
+        }
+        Insert: {
+          address?: string | null
+          business_name?: string | null
+          city?: string | null
+          created_at?: string | null
+          description?: string | null
+          email?: string | null
+          id?: string | null
+          is_active?: boolean | null
+          is_approved?: boolean | null
+          neighborhood?: string | null
+          phone?: string | null
+          photo_url?: string | null
+          rating?: number | null
+          review_count?: number | null
+          service_radius_km?: number | null
+          slug?: string | null
+          state_code?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          whatsapp?: string | null
+        }
+        Update: {
+          address?: string | null
+          business_name?: string | null
+          city?: string | null
+          created_at?: string | null
+          description?: string | null
+          email?: string | null
+          id?: string | null
+          is_active?: boolean | null
+          is_approved?: boolean | null
+          neighborhood?: string | null
+          phone?: string | null
+          photo_url?: string | null
+          rating?: number | null
+          review_count?: number | null
+          service_radius_km?: number | null
+          slug?: string | null
+          state_code?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          whatsapp?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "professionals_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Functions: {
       has_role: {
