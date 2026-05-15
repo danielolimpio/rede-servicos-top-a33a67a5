@@ -103,19 +103,23 @@ export type Database = {
       }
       professionals: {
         Row: {
+          accepted_terms_at: string | null
           address: string | null
           business_name: string
+          cep: string | null
           city: string
           cnpj_cpf: string | null
           created_at: string
           description: string | null
           email: string
+          emergency_24h: boolean
           id: string
           is_active: boolean
           is_approved: boolean
           neighborhood: string | null
           phone: string
           photo_url: string | null
+          price_range: string | null
           rating: number | null
           review_count: number | null
           service_radius_km: number
@@ -124,21 +128,26 @@ export type Database = {
           updated_at: string
           user_id: string
           whatsapp: string | null
+          years_experience: number | null
         }
         Insert: {
+          accepted_terms_at?: string | null
           address?: string | null
           business_name: string
+          cep?: string | null
           city: string
           cnpj_cpf?: string | null
           created_at?: string
           description?: string | null
           email: string
+          emergency_24h?: boolean
           id?: string
           is_active?: boolean
           is_approved?: boolean
           neighborhood?: string | null
           phone: string
           photo_url?: string | null
+          price_range?: string | null
           rating?: number | null
           review_count?: number | null
           service_radius_km?: number
@@ -147,21 +156,26 @@ export type Database = {
           updated_at?: string
           user_id: string
           whatsapp?: string | null
+          years_experience?: number | null
         }
         Update: {
+          accepted_terms_at?: string | null
           address?: string | null
           business_name?: string
+          cep?: string | null
           city?: string
           cnpj_cpf?: string | null
           created_at?: string
           description?: string | null
           email?: string
+          emergency_24h?: boolean
           id?: string
           is_active?: boolean
           is_approved?: boolean
           neighborhood?: string | null
           phone?: string
           photo_url?: string | null
+          price_range?: string | null
           rating?: number | null
           review_count?: number | null
           service_radius_km?: number
@@ -170,6 +184,7 @@ export type Database = {
           updated_at?: string
           user_id?: string
           whatsapp?: string | null
+          years_experience?: number | null
         }
         Relationships: [
           {
