@@ -134,7 +134,7 @@ const ServiceDetail = () => {
 
                 <div className="flex flex-wrap gap-8 items-center justify-center py-6">
                   {manufacturers.map((brand, index) => (
-                    <div key={index} className="text-xl font-bold text-muted-foreground/60">
+                    <div key={index} className="text-xl font-bold text-muted-foreground">
                       {brand}
                     </div>
                   ))}
