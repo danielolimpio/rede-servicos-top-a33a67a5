@@ -1,0 +1,32 @@
+# Serviço Local
+
+> Portal de busca de profissionais e prestadores de serviços técnicos no Brasil — eletrodomésticos, reformas, climatização, veículos, emergências 24h e mais.
+
+O Serviço Local é um diretório online que conecta usuários a profissionais qualificados por categoria, cidade e bairro. O portal não presta serviços diretamente nem se responsabiliza pela qualidade dos atendimentos — apenas facilita a descoberta de prestadores locais por geolocalização (estado, cidade e bairro via API do IBGE).
+
+São 7 macrocategorias com centenas de especialidades: Veículos & Transporte, Casa & Reforma (inclui climatização residencial), Eletrodomésticos & Eletrônicos, Serviços Técnicos & Emergências (inclui energia solar), Móveis & Artesanato, Jardim/Paisagismo & Pet, e Negócios/Digital & B2B.
+
+## Páginas
+
+- [Início](/): Busca de profissionais por categoria, cidade e bairro
+- [Sobre](/sobre): Quem somos e como o portal funciona
+- [Serviços](/servicos): Lista completa de categorias e especialidades
+- [Galeria](/galeria): Trabalhos realizados por profissionais cadastrados
+- [Blog](/blog): Artigos, dicas técnicas e guias de manutenção
+- [Contato](/contato): Canais de atendimento e suporte
+- [Cadastro Profissional](/cadastro-profissional): Formulário para profissionais se cadastrarem no diretório
+
+## Categorias
+
+- [Veículos & Transporte](/categoria/veiculos-transporte): Mecânica, elétrica veicular, funilaria, motos, veículos elétricos
+- [Casa & Reforma](/categoria/casa-reforma): Reformas, hidráulica, elétrica residencial, marcenaria e climatização (ar-condicionado split)
+- [Eletrodomésticos & Eletrônicos](/categoria/eletrodomesticos-eletronicos): Conserto de geladeira, máquina de lavar, celular, TV, computador
+- [Serviços Técnicos & Emergências](/categoria/servicos-tecnicos-emergencias): Encanador 24h, eletricista, chaveiro, desentupimento, energia solar
+- [Móveis & Artesanato](/categoria/moveis-artesanato): Conserto, restauração, estofamento, marcenaria artística
+- [Jardim, Paisagismo & Pet](/categoria/jardim-lazer-pet): Irrigação, paisagismo, pet-services técnicos
+- [Negócios, Digital & B2B](/categoria/equipamentos-profissionais): Freelancer digital, marketing, dados, facilities, equipamentos comerciais
+
+## Opcional
+
+- [Termos de Uso](/termos-de-uso): Termos e condições de uso do portal
+- [Política de Privacidade](/politica-de-privacidade): Tratamento de dados conforme LGPD
