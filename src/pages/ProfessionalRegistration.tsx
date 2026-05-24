@@ -116,6 +116,7 @@ const ProfessionalRegistration = () => {
 
   // Step 2
   const [selectedSpecialties, setSelectedSpecialties] = useState<SelectedSpecialty[]>([]);
+  const [specialtySearch, setSpecialtySearch] = useState("");
   const [stateCode, setStateCode] = useState("");
   const [city, setCity] = useState("");
   const [neighborhood, setNeighborhood] = useState("");
