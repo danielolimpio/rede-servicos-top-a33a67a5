@@ -473,40 +473,91 @@ const ProfessionalRegistration = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>Especialidades *</CardTitle>
-                  <CardDescription>Selecione os serviços que você oferece ({selectedSpecialties.length} selecionadas)</CardDescription>
+                  <CardDescription>
+                    Selecione os serviços que você oferece ({selectedSpecialties.length} selecionada{selectedSpecialties.length === 1 ? "" : "s"})
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
-                    {categories.map((category) => (
-                      <div key={category.id} className="border rounded-lg p-4">
-                        <h4 className="font-semibold mb-3 flex items-center gap-2">
-                          <category.icon className="h-5 w-5 text-primary" />
-                          {category.name}
-                        </h4>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                          {category.subcategories.map((sub) => {
-                            const isSelected = selectedSpecialties.some(
-                              (s) => s.categoryId === category.id && s.subcategoryId === sub.id
-                            );
-                            return (
-                              <div
-                                key={sub.id}
-                                className={`flex items-center gap-2 p-2 rounded cursor-pointer transition-colors ${
-                                  isSelected ? "bg-primary/10" : "hover:bg-muted"
-                                }`}
-                                onClick={() => toggleSpecialty(category.id, category.name, sub.id, sub.name)}
-                              >
-                                <Checkbox checked={isSelected} />
-                                <span className="text-sm">{sub.name}</span>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    ))}
+                  <div className="mb-4">
+                    <Input
+                      placeholder="🔍 Buscar especialidade (ex: geladeira, eletricista, SEO...)"
+                      value={specialtySearch}
+                      onChange={(e) => setSpecialtySearch(e.target.value)}
+                    />
                   </div>
+                  <Accordion type="multiple" className="space-y-2">
+                    {categories.map((category) => {
+                      const normalize = (s: string) =>
+                        s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                      const q = normalize(specialtySearch.trim());
+                      const filteredSubs = q
+                        ? category.subcategories.filter(
+                            (s) => normalize(s.name).includes(q) || normalize(s.group || "").includes(q)
+                          )
+                        : category.subcategories;
+                      if (q && filteredSubs.length === 0) return null;
+
+                      // Group by sub.group
+                      const groups = filteredSubs.reduce<Record<string, typeof filteredSubs>>((acc, sub) => {
+                        const key = sub.group || "Outros";
+                        (acc[key] = acc[key] || []).push(sub);
+                        return acc;
+                      }, {});
+
+                      const selectedInCat = selectedSpecialties.filter((s) => s.categoryId === category.id).length;
+
+                      return (
+                        <AccordionItem key={category.id} value={category.id} className="border rounded-lg px-4">
+                          <AccordionTrigger className="hover:no-underline">
+                            <div className="flex items-center gap-2 flex-1">
+                              <category.icon className="h-5 w-5 text-primary" />
+                              <span className="font-semibold text-left">{category.name}</span>
+                              {selectedInCat > 0 && (
+                                <Badge variant="secondary" className="ml-2">
+                                  {selectedInCat}
+                                </Badge>
+                              )}
+                            </div>
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <div className="space-y-4 pt-2">
+                              {Object.entries(groups).map(([groupName, subs]) => (
+                                <div key={groupName}>
+                                  <h5 className="text-xs font-bold uppercase text-muted-foreground mb-2 tracking-wide">
+                                    {groupName}
+                                  </h5>
+                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+                                    {subs.map((sub) => {
+                                      const isSelected = selectedSpecialties.some(
+                                        (s) => s.categoryId === category.id && s.subcategoryId === sub.id
+                                      );
+                                      return (
+                                        <div
+                                          key={sub.id}
+                                          className={`flex items-center gap-2 p-2 rounded cursor-pointer transition-colors ${
+                                            isSelected ? "bg-primary/10" : "hover:bg-muted"
+                                          }`}
+                                          onClick={() =>
+                                            toggleSpecialty(category.id, category.name, sub.id, sub.name)
+                                          }
+                                        >
+                                          <Checkbox checked={isSelected} />
+                                          <span className="text-sm">{sub.name}</span>
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      );
+                    })}
+                  </Accordion>
                 </CardContent>
               </Card>
+
 
               <Card>
                 <CardHeader>
