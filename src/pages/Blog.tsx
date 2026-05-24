@@ -239,7 +239,7 @@ const Blog = () => {
             <input
               type="email"
               placeholder="Seu melhor email"
-              className="flex-1 px-6 py-3 rounded-full border-2 border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+              className="flex-1 px-6 py-3 rounded-full border-2 border-white/30 bg-white/20 text-white placeholder:text-white/90 focus:outline-none focus:border-white transition-colors"
             />
             <Button size="lg" variant="secondary" className="rounded-full px-8 whitespace-nowrap">
               Inscrever-se
