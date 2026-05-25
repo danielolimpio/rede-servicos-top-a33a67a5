@@ -10,6 +10,7 @@ export interface Subcategory {
 export interface Category {
   id: string;
   name: string;
+  shortName?: string;
   slug: string;
   icon: any;
   description: string;
@@ -20,6 +21,7 @@ export const categories: Category[] = [
   {
     id: "veiculos-transporte",
     name: "Veículos & Transporte",
+    shortName: "Veículos",
     slug: "veiculos-transporte",
     icon: Car,
     description: "Carros, Motos, Mecânica, Elétrica, Funilaria, Veículos Elétricos",
@@ -76,6 +78,7 @@ export const categories: Category[] = [
   {
     id: "casa-reforma",
     name: "Casa & Reforma",
+    shortName: "Casa",
     slug: "casa-reforma",
     icon: Home,
     description: "Reformas, Construção, Climatização, Hidráulica, Elétrica, Marcenaria",
@@ -140,6 +143,7 @@ export const categories: Category[] = [
   {
     id: "eletrodomesticos-eletronicos",
     name: "Eletrodomésticos & Eletrônicos",
+    shortName: "Eletrônicos",
     slug: "eletrodomesticos-eletronicos",
     icon: Zap,
     description: "Linha Branca, Pequenos Eletros, TI, Celular, TV, IoT, Equipamentos Médicos",
@@ -184,6 +188,7 @@ export const categories: Category[] = [
   {
     id: "servicos-tecnicos-emergencias",
     name: "Serviços Técnicos & Emergências",
+    shortName: "Serviços",
     slug: "servicos-tecnicos-emergencias",
     icon: Wrench,
     description: "Encanador 24h, Eletricista, Chaveiro, Desentupimento, Automação, Energia Solar",
@@ -221,6 +226,7 @@ export const categories: Category[] = [
   {
     id: "moveis-artesanato",
     name: "Móveis & Artesanato",
+    shortName: "Móveis",
     slug: "moveis-artesanato",
     icon: Sofa,
     description: "Conserto, Restauração, Estofamento, Marcenaria Artística, Instrumentos",
@@ -246,6 +252,7 @@ export const categories: Category[] = [
   {
     id: "jardim-lazer-pet",
     name: "Jardim, Paisagismo & Pet",
+    shortName: "Jardim & Pet",
     slug: "jardim-lazer-pet",
     icon: TreePine,
     description: "Irrigação, Paisagismo, Iluminação de jardim, Pet-services técnicos",
@@ -270,6 +277,7 @@ export const categories: Category[] = [
   {
     id: "equipamentos-profissionais",
     name: "Negócios, Digital & B2B",
+    shortName: "Negócios",
     slug: "equipamentos-profissionais",
     icon: Briefcase,
     description: "Freelancer Digital, Marketing, Dados, Facilities, Equipamentos Comerciais",

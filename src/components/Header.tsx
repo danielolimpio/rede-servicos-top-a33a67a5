@@ -117,10 +117,10 @@ const Header = () => {
                   <Link
                     key={category.id}
                     to={`/categoria/${category.slug}`}
-                    className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+                    className="flex items-center gap-2 text-foreground hover:text-primary transition-colors whitespace-nowrap"
                   >
-                    <IconComponent className="h-5 w-5" />
-                    <span className="text-sm font-medium">{category.name}</span>
+                    <IconComponent className="h-5 w-5 shrink-0" />
+                    <span className="text-sm font-medium">{category.shortName ?? category.name}</span>
                   </Link>
                 );
               })}
