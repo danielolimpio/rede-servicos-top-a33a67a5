@@ -277,6 +277,7 @@ export const categories: Category[] = [
   {
     id: "equipamentos-profissionais",
     name: "Negócios, Digital & B2B",
+    shortName: "Negócios",
     slug: "equipamentos-profissionais",
     icon: Briefcase,
     description: "Freelancer Digital, Marketing, Dados, Facilities, Equipamentos Comerciais",
