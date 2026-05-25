@@ -78,6 +78,7 @@ export const categories: Category[] = [
   {
     id: "casa-reforma",
     name: "Casa & Reforma",
+    shortName: "Casa",
     slug: "casa-reforma",
     icon: Home,
     description: "Reformas, Construção, Climatização, Hidráulica, Elétrica, Marcenaria",
