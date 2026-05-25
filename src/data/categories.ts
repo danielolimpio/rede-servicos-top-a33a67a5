@@ -252,6 +252,7 @@ export const categories: Category[] = [
   {
     id: "jardim-lazer-pet",
     name: "Jardim, Paisagismo & Pet",
+    shortName: "Jardim & Pet",
     slug: "jardim-lazer-pet",
     icon: TreePine,
     description: "Irrigação, Paisagismo, Iluminação de jardim, Pet-services técnicos",
