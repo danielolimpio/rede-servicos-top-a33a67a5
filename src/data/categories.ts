@@ -21,6 +21,7 @@ export const categories: Category[] = [
   {
     id: "veiculos-transporte",
     name: "Veículos & Transporte",
+    shortName: "Veículos",
     slug: "veiculos-transporte",
     icon: Car,
     description: "Carros, Motos, Mecânica, Elétrica, Funilaria, Veículos Elétricos",
