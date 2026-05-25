@@ -143,6 +143,7 @@ export const categories: Category[] = [
   {
     id: "eletrodomesticos-eletronicos",
     name: "Eletrodomésticos & Eletrônicos",
+    shortName: "Eletrônicos",
     slug: "eletrodomesticos-eletronicos",
     icon: Zap,
     description: "Linha Branca, Pequenos Eletros, TI, Celular, TV, IoT, Equipamentos Médicos",
