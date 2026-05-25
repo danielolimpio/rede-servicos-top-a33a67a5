@@ -19,8 +19,8 @@ const Header = () => {
         <div className="hidden sm:block bg-primary-dark text-white py-2 px-4">
           <div className="container mx-auto flex items-center justify-between">
             <p className="text-sm text-white">Bem-vindo ao nosso centro de serviços! Trabalhamos para você!</p>
-            <Button size="sm" variant="secondary" className="rounded-full">
-              CONSULTA GRÁTIS
+            <Button asChild size="sm" variant="secondary" className="rounded-full">
+              <Link to="/cadastro-profissional">CADASTRE-SE</Link>
             </Button>
           </div>
         </div>
