@@ -10,6 +10,7 @@ export interface Subcategory {
 export interface Category {
   id: string;
   name: string;
+  shortName?: string;
   slug: string;
   icon: any;
   description: string;
