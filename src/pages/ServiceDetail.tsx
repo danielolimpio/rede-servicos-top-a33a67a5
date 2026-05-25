@@ -39,10 +39,10 @@ const ServiceDetail = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title={`${currentService.title} - Assistência Técnica Especializada`}
-        description={`${currentService.description} Orçamento grátis, atendimento rápido e peças originais. Encontre técnicos especializados na sua região.`}
+        title={currentService.title}
+        description={`${currentService.description} Orçamento grátis e técnicos especializados na sua região.`}
         canonical={`/servicos/${currentService.slug}`}
-        keywords={`${currentService.title.toLowerCase()}, assistência técnica, reparo, manutenção, técnico especializado, peças originais`}
+        keywords={`${currentService.title.toLowerCase()}, assistência técnica, reparo, manutenção, técnico especializado`}
       />
       <Header />
 
