@@ -226,6 +226,7 @@ export const categories: Category[] = [
   {
     id: "moveis-artesanato",
     name: "Móveis & Artesanato",
+    shortName: "Móveis",
     slug: "moveis-artesanato",
     icon: Sofa,
     description: "Conserto, Restauração, Estofamento, Marcenaria Artística, Instrumentos",
