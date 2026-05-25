@@ -188,6 +188,7 @@ export const categories: Category[] = [
   {
     id: "servicos-tecnicos-emergencias",
     name: "Serviços Técnicos & Emergências",
+    shortName: "Serviços",
     slug: "servicos-tecnicos-emergencias",
     icon: Wrench,
     description: "Encanador 24h, Eletricista, Chaveiro, Desentupimento, Automação, Energia Solar",
