@@ -11,13 +11,17 @@ const Hero = () => {
 
   return (
     <section className="relative h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${slide1})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary-dark/90" />
-      </div>
+      {/* Background Image (LCP candidate) */}
+      <img
+        src={slide1}
+        alt=""
+        width={1920}
+        height={500}
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary-dark/90" />
 
       {/* Content */}
       <div className="relative h-full flex items-center justify-center px-4">
