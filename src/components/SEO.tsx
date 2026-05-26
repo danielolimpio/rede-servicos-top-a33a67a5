@@ -14,8 +14,8 @@ interface SEOProps {
 }
 
 const SITE_NAME = 'Serviço Local';
-const SITE_URL = 'https://servicolocal.com';
-const DEFAULT_IMAGE = `${SITE_URL}/favicon.png`;
+const SITE_URL = 'https://rede-servicos-top.lovable.app';
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 const SEO = ({
   title,
@@ -31,6 +31,7 @@ const SEO = ({
 }: SEOProps) => {
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : undefined;
+  const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
   
   return (
     <Helmet>
@@ -53,14 +54,14 @@ const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:image" content={absoluteOgImage} />
       <meta property="og:locale" content="pt_BR" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image" content={absoluteOgImage} />
       
       {/* Article specific */}
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}

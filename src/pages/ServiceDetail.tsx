@@ -44,6 +44,7 @@ const ServiceDetail = () => {
         description={`${currentService.description} Orçamento grátis e técnicos especializados na sua região.`}
         canonical={`/servicos/${currentService.slug}`}
         keywords={`${currentService.title.toLowerCase()}, assistência técnica, reparo, manutenção, técnico especializado`}
+        ogImage={iceMaker}
       />
       <Helmet>
         <script type="application/ld+json">

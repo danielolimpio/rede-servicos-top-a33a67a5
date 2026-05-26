@@ -80,9 +80,11 @@ const Blog = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Blog - Dicas e Guias de Manutenção"
-        description="Blog do Serviço Local com dicas, guias e informações sobre manutenção e cuidados com seus eletrodomésticos. Aprenda a economizar e prolongar a vida útil dos seus aparelhos."
+        description="Dicas, guias e informações sobre manutenção de eletrodomésticos. Aprenda a economizar energia e prolongar a vida útil dos seus aparelhos."
         canonical="/blog"
         keywords="blog eletrodomésticos, dicas de manutenção, guias de conserto, economia de energia, cuidados com aparelhos"
+        ogType="article"
+        ogImage={featuredPost.image}
       />
       <Helmet>
         <script type="application/ld+json">
