@@ -44,6 +44,24 @@ const ServiceDetail = () => {
         canonical={`/servicos/${currentService.slug}`}
         keywords={`${currentService.title.toLowerCase()}, assistência técnica, reparo, manutenção, técnico especializado`}
       />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: currentService.title,
+            description: currentService.description,
+            serviceType: currentService.title,
+            areaServed: "BR",
+            provider: {
+              "@type": "Organization",
+              name: "Serviço Local",
+              url: "https://servicolocal.com",
+            },
+            url: `https://servicolocal.com/servicos/${currentService.slug}`,
+          })}
+        </script>
+      </Helmet>
       <Header />
 
       <main className="py-8">
