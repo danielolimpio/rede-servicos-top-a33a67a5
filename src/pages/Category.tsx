@@ -133,6 +133,7 @@ const Category = () => {
         description={`Encontre profissionais especializados em ${category.name}. ${category.description} Técnicos qualificados na sua região.`}
         canonical={`/categoria/${category.slug}`}
         keywords={`${category.name.toLowerCase()}, profissionais ${category.name.toLowerCase()}, técnicos especializados, assistência técnica`}
+        ogImage="/og-services.jpg"
       />
       <Header />
       <main>
