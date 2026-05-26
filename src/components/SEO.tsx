@@ -14,8 +14,8 @@ interface SEOProps {
 }
 
 const SITE_NAME = 'Serviço Local';
-const SITE_URL = 'https://servicolocal.com';
-const DEFAULT_IMAGE = `${SITE_URL}/favicon.png`;
+const SITE_URL = 'https://rede-servicos-top.lovable.app';
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 const SEO = ({
   title,
@@ -31,6 +31,7 @@ const SEO = ({
 }: SEOProps) => {
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : undefined;
+  const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
   
   return (
     <Helmet>
