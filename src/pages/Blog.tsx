@@ -84,7 +84,7 @@ const Blog = () => {
         canonical="/blog"
         keywords="blog eletrodomésticos, dicas de manutenção, guias de conserto, economia de energia, cuidados com aparelhos"
         ogType="article"
-        ogImage={featuredPost.image}
+        ogImage="/og-blog.jpg"
       />
       <Helmet>
         <script type="application/ld+json">

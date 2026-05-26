@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ChevronRight } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import iceMaker from "@/assets/ice-maker.jpg";
+import { getServiceOgImage } from "@/lib/ogImages";
 
 const ServiceDetail = () => {
   const { slug } = useParams();
@@ -44,7 +45,7 @@ const ServiceDetail = () => {
         description={`${currentService.description} Orçamento grátis e técnicos especializados na sua região.`}
         canonical={`/servicos/${currentService.slug}`}
         keywords={`${currentService.title.toLowerCase()}, assistência técnica, reparo, manutenção, técnico especializado`}
-        ogImage={iceMaker}
+        ogImage={getServiceOgImage(currentService.slug)}
       />
       <Helmet>
         <script type="application/ld+json">
