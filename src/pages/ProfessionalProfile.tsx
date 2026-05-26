@@ -80,6 +80,30 @@ const ProfessionalProfile = () => {
         <meta property="og:description" content={professional.description} />
         <meta property="og:image" content={professional.photo} />
         <link rel="canonical" href={`https://servicolocal.com/profissional/${professional.slug}`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: professional.name,
+            image: professional.photo,
+            description: professional.description,
+            telephone: professional.phone,
+            email: professional.email,
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: professional.location.city,
+              addressRegion: professional.location.state,
+              streetAddress: professional.location.neighborhood,
+              addressCountry: "BR",
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: averageRating,
+              reviewCount: totalReviews,
+            },
+            url: `https://servicolocal.com/profissional/${professional.slug}`,
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen">
