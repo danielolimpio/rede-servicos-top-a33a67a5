@@ -28,27 +28,24 @@ const Header = () => {
         {/* Main Header - Primary Blue with Navigation */}
         <div className="bg-primary text-white py-3 sm:py-4 px-4">
           <div className="container mx-auto flex items-center justify-between">
-            {/* Mobile: Evenly distributed layout */}
-            <div className="flex lg:hidden items-center justify-between w-full">
-              {/* Menu Hamburguer */}
-              <MobileMenu onSearchOpen={() => setSearchOpen(true)} />
-              
+            {/* Mobile: Logo left, Search + Hamburger right */}
+            <div className="flex lg:hidden items-center justify-between w-full gap-3">
               {/* Logo */}
               <Link to="/" className="flex items-center">
                 <img src={logoHorizontal} alt="Serviço Local" className="h-8" />
               </Link>
-              
-              {/* Location */}
-              <LocationSelector />
-              
-              {/* Search */}
-              <button 
-                onClick={() => setSearchOpen(true)}
-                className="text-white hover:opacity-80 transition-opacity"
-                aria-label="Abrir busca"
-              >
-                <Search className="h-5 w-5" />
-              </button>
+
+              {/* Search + Menu Hamburguer */}
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={() => setSearchOpen(true)}
+                  className="text-white hover:opacity-80 transition-opacity"
+                  aria-label="Abrir busca"
+                >
+                  <Search className="h-5 w-5" />
+                </button>
+                <MobileMenu onSearchOpen={() => setSearchOpen(true)} />
+              </div>
             </div>
 
             {/* Desktop: Original layout */}
