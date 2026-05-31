@@ -104,6 +104,13 @@ const Header = () => {
           </div>
         </div>
 
+        {/* Mobile Location Bar - Below header */}
+        <div className="lg:hidden bg-primary-dark text-white px-4 py-2 flex justify-center">
+          <LocationSelector />
+        </div>
+
+
+
         {/* Categories Bar - Hidden on mobile */}
         <nav className="hidden lg:block bg-background border-b border-border py-3 px-4">
           <div className="container mx-auto">
