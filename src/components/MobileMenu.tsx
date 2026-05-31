@@ -80,7 +80,7 @@ const MobileMenu = ({ onSearchOpen }: MobileMenuProps) => {
                         <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                           <IconComponent className="w-4 h-4 text-primary" />
                         </div>
-                        <span className="font-medium text-sm">{category.name}</span>
+                        <span className="font-medium text-sm">{category.shortName ?? category.name}</span>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pb-2">
